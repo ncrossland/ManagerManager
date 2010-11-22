@@ -229,7 +229,7 @@ function mm_moveFieldsToTab($fields, $newtab, $roles='', $templates='') {
 		$output .= 'var ruleHtml = \'<tr style="height: 10px"><td colspan="2"><div class="split"></div></td></tr>\'; ';
 		
 		// Try and identify any URL type TVs
-		$output .= '$j("select[id$=_prefix]").each( function() { $j(this).parents("tr:first").addClass("urltv"); console.log( $j(this), $j(this).parents("tr:first")) ; }  ); ';
+		$output .= '$j("select[id$=_prefix]").each( function() { $j(this).parents("tr:first").addClass("urltv"); }  ); ';
 			
 		// Go through each field that has been supplied
 		foreach ($fields as $field) {
