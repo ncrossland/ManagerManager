@@ -56,6 +56,7 @@ function mm_widget_showimagetvs($tvs='', $w=300, $h=100, $thumbnailerUrl='', $ro
 			$j("#tv'.$tv['id'].'").addClass("imageField").bind( "change load", function() {
 				// Get the new URL
 				var url = $j(this).val();
+				url = (url.substr(0,1) == "@") ? "" : url; // If an @ binding, do nothing
 				url = (url != "" && url.search(/http:\/\//i) == -1) ? ("'.$site.'" + url) : url;
 				
 				';
