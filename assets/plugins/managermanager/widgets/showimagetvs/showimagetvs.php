@@ -80,7 +80,8 @@ function mm_widget_showimagetvs($tvs='', $w=300, $h=100, $thumbnailerUrl='', $ro
 																 });
 				}
 				
-			}); // Trigger a change event on load
+			$j.data(this,"lastvalue", $j(this).val());	
+                	}).trigger("load"); // Trigger a change event on load  
 	
 			
 			';	
@@ -95,7 +96,7 @@ function mm_widget_showimagetvs($tvs='', $w=300, $h=100, $thumbnailerUrl='', $ro
 					$j(".imageField").each( function() {
 						var $this = $j(this);
 						if ($this.val() != $this.data("lastvalue") ) {
-							$this.trigger("change").data("lastvalue", $this.val());
+							$this.trigger("change");
 						}						
 					});
 			}	
